@@ -2,66 +2,60 @@ import { User, Property, Transaction, Contract, Message, Partner, ActivityLog, S
 
 export const mockUsers: User[] = [
   {
-    id: '1',
-    name: 'Jean Dupont',
+    uid: '1',
+    nom: 'Dupont',
+    prenom: 'Jean',
     email: 'jean.dupont@email.com',
-    role: 'client',
-    status: 'actif',
-    location: 'Paris',
-    registrationDate: '2025-01-15',
-    lastActivity: '2025-01-27',
-    avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=150&h=150&fit=crop'
-  },
-  {
-    id: '2',
-    name: 'Marie Martin',
-    email: 'marie.martin@email.com',
-    role: 'proprietaire',
-    status: 'actif',
-    location: 'Lyon',
-    registrationDate: '2025-01-10',
-    lastActivity: '2025-01-26',
-    avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?w=150&h=150&fit=crop'
-  },
-  {
-    id: '3',
-    name: 'Agence Immobilier Plus',
-    email: 'contact@agenceplus.fr',
-    role: 'agence',
-    status: 'en_attente',
-    location: 'Marseille',
-    registrationDate: '2025-01-20',
-    lastActivity: '2025-01-25',
-    documents: ['licence-agence.pdf', 'assurance-prof.pdf']
-  },
-  {
-    id: '4',
-    name: 'Admin Principal',
-    email: 'admin@kinaru.com',
-    role: 'agence',
-    adminRole: 'super_admin',
-    status: 'actif',
-    location: 'Paris',
-    registrationDate: '2024-12-01',
-    lastActivity: '2025-01-27'
+    telephone: '+33612345678',
+    photoProfil: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=150&h=150&fit=crop',
+    cniNumber: 'FR123456789',
+    CNIDateDelivrer: '2020-01-15',
+    cniExpirationDate: '2030-01-15',
+    cniRecto: 'cni-recto-1.jpg',
+    cniVerso: 'cni-verso-1.jpg',
+    addresse: '123 rue de Paris, 75001 Paris',
+    fcmToken: 'fcm-token-1',
+    lastUpdated: '2025-01-27',
+    etat: 1,
+    statut: 1,
+    typeUsersId: 1,
+    notificationPrefs: {
+      messages: true,
+      newProperties: true,
+      payments: true,
+      reservations: true,
+      visits: true
+    }
   }
 ];
 
 // Générer plus d'utilisateurs
-for (let i = 5; i <= 40; i++) {
-  const roles = ['client', 'proprietaire', 'agence'];
-  const locations = ['Paris', 'Lyon', 'Marseille', 'Toulouse', 'Nice', 'Bordeaux'];
-  const statuses = ['actif', 'banni', 'en_attente'];
-  
+for (let i = 2; i <= 40; i++) {
   mockUsers.push({
-    id: i.toString(),
-    name: `Utilisateur ${i}`,
+    uid: i.toString(),
+    nom: `Nom${i}`,
+    prenom: `Prenom${i}`,
     email: `user${i}@email.com`,
-    role: roles[Math.floor(Math.random() * roles.length)] as any,
-    status: statuses[Math.floor(Math.random() * statuses.length)] as any,
-    location: locations[Math.floor(Math.random() * locations.length)],
-    registrationDate: `2025-01-${Math.floor(Math.random() * 27) + 1}`,
-    lastActivity: `2025-01-${Math.floor(Math.random() * 27) + 1}`
+    telephone: `+336${Math.floor(10000000 + Math.random() * 90000000)}`,
+    photoProfil: `https://images.pexels.com/photos/${220453 + i}/pexels-photo-${220453 + i}.jpeg?w=150&h=150&fit=crop`,
+    cniNumber: `FR${Math.floor(100000000 + Math.random() * 900000000)}`,
+    CNIDateDelivrer: '2020-01-15',
+    cniExpirationDate: '2030-01-15',
+    cniRecto: `cni-recto-${i}.jpg`,
+    cniVerso: `cni-verso-${i}.jpg`,
+    addresse: `${i} rue de Paris, 75001 Paris`,
+    fcmToken: `fcm-token-${i}`,
+    lastUpdated: `2025-01-${Math.floor(Math.random() * 27) + 1}`,
+    etat: Math.floor(Math.random() * 3),
+    statut: Math.floor(Math.random() * 3),
+    typeUsersId: Math.floor(Math.random() * 3) + 1,
+    notificationPrefs: {
+      messages: Math.random() > 0.5,
+      newProperties: Math.random() > 0.5,
+      payments: Math.random() > 0.5,
+      reservations: Math.random() > 0.5,
+      visits: Math.random() > 0.5
+    }
   });
 }
 
