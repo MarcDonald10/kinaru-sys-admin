@@ -8,7 +8,7 @@ import TransactionManagement from './components/Transactions/TransactionManageme
 import ContractManagement from './components/Contracts/ContractManagement';
 import MessagingSystem from './components/Messaging/MessagingSystem';
 import PartnerManagement from './components/Partners/PartnerManagement';
-import ActivityLogs from './components/Logs/ActivityLogs';
+// import ActivityLogs from './components/Logs/ActivityLogs';
 import Settings from './components/Settings/Settings';
 
 function App() {
@@ -63,8 +63,8 @@ function App() {
         );
       case 'partners':
         return <PartnerManagement />;
-      case 'logs':
-        return <ActivityLogs />;
+      // case 'logs':
+      //   return <ActivityLogs />;
       case 'settings':
         return <Settings />;
       default:
